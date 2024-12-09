@@ -12,6 +12,7 @@ const Settings = async () => {
       <SettingsForm
         initialName={session?.user?.name}
         initialLastName={session?.user?.lastName}
+        initialImage={session?.user?.imageUrl}
       />
     </main>
   );

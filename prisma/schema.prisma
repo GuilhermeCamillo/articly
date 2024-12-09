@@ -31,6 +31,9 @@ model Article {
     imageUrl    String? @db.Text
     content     String? @db.LongText
 
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
     userId String
     user   User   @relation(fields: [userId], references: [id])
 

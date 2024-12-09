@@ -75,6 +75,10 @@ body {
   @apply w-full bg-primary min-h-[430px] flex justify-center items-center flex-col px-6;
 }
 
+.section_container {
+  @apply px-6 py-10 max-w-7xl mx-auto;
+}
+
 .heading {
   @apply uppercase bg-black px-6 py-3 font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
 }
@@ -93,4 +97,16 @@ body {
 
 .search-btn {
   @apply size-[50px] rounded-full bg-black flex justify-center items-center !important;
+}
+
+.startup-form_input {
+  @apply border-[3px] border-black px-5 py-7 text-[18px] text-black font-semibold rounded-full mt-3 !important;
+}
+
+.startup-form_textarea {
+  @apply border-[3px] border-black p-5 text-[18px] text-black font-semibold rounded-[20px] mt-3 !important;
+}
+
+.w-md-editor-toolbar {
+  padding: 10px !important;
 }

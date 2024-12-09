@@ -110,3 +110,27 @@ export const createArticle = async (values: Partial<Article>) => {
     console.log(error);
   }
 };
+
+export const getArticleById = async (id: string) => {
+  try {
+    const article = await prisma.article.findFirst({
+      where: {
+        id: id,
+      },
+      include: {
+        user: {
+          select: {
+            id: true,
+            name: true,
+            lastName: true,
+            imageUrl: true,
+          },
+        },
+      },
+    });
+
+    return article;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -28,11 +28,11 @@ export default async function Home({
         <SearchForm query={query} action="/" />
       </section>
 
-      <section className="container mx-auto py-4">
+      <section className="section_container">
         <p className="text-[30px] font-bold text-black p-4">
           {query ? `Buscando por "${query}"` : "Todos os artigos"}
         </p>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
           {articles?.map(
             (item: Partial<Article & { user: Partial<User> }>, index) => (
               <ArticleCard key={item.id} item={item} />

@@ -20,7 +20,8 @@ const Header = async () => {
         {session?.user ? (
           <AvatarMenu
             userName={session.user?.name}
-            userEmail={session?.user.email}
+            userEmail={session?.user?.email}
+            userImage={session?.user?.imageUrl}
           />
         ) : (
           <Link

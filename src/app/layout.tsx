@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Manrope } from "next/font/google";
-
-// const manrope = localFont({
-//   src: "./fonts/ManropeVF.ttf",
-//   variable: "--font-manrope",
-//   weight: "100 900",
-// });
+import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -30,11 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} antialiased min-h-full bg-white`}
+        className={cn(
+          "font-Poppins antialiased min-h-full bg-white",
+          manrope.variable
+        )}
         suppressHydrationWarning
       >
         <Header />
         {children}
+        <Toaster />
       </body>
     </html>
   );
