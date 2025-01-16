@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useState, useActionState } from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import MDEditor from "@uiw/react-md-editor";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -32,8 +30,6 @@ export const formSchema = z.object({
 const StartupForm = () => {
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
-  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -132,7 +128,7 @@ const StartupForm = () => {
         <FormField
           control={form.control}
           name="content"
-          render={({ field }) => (
+          render={({}) => (
             <div data-color-mode="light">
               <FormItem>
                 <FormLabel>Título</FormLabel>

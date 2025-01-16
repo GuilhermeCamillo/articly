@@ -3,6 +3,7 @@
 import { Article } from "@prisma/client";
 import { prisma } from "../../prisma/prisma";
 import { auth } from "../../auth";
+import { redirect } from "next/navigation";
 
 export const getAllArticles = async ({
   search,
@@ -104,8 +105,7 @@ export const createArticle = async (values: Partial<Article>) => {
     const article = await prisma.article.create({
       data: createValues,
     });
-
-    return article;
+    redirect(`/article/${article.id}`);
   } catch (error) {
     console.log(error);
   }

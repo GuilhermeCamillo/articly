@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Settings, FileText, LogOut } from "lucide-react";
+import { Settings, FileText, LogOut, Plus } from "lucide-react";
 import { signOut } from "../../auth";
 import Link from "next/link";
 
@@ -57,6 +57,12 @@ export default function AvatarMenu({
           <DropdownMenuItem className="cursor-pointer">
             <FileText className="mr-2 h-4 w-4" />
             <span>Meus artigos</span>
+          </DropdownMenuItem>
+        </Link>
+        <Link href="/article/create">
+          <DropdownMenuItem className="cursor-pointer">
+            <Plus className="mr-2 h-4 w-4" />
+            <span>Criar artigo</span>
           </DropdownMenuItem>
         </Link>
         <DropdownMenuSeparator />
