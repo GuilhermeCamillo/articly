@@ -17,7 +17,7 @@ const Articles = async ({ params }: { params: Promise<{ id: string }> }) => {
         <h1 className="heading line-clamp-5 break-all">{article?.title}</h1>
         <h2 className="sub-heading text-white">{article?.description}</h2>
         <p className="mt-3 p-4 bg-slate-100 text-black font-bold rounded-sm">
-          {formatDate(article?.createdAt!)}
+          {formatDate(article?.createdAt!.toString())}
         </p>
       </section>
 
